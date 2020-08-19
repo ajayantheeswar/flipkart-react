@@ -1,0 +1,17 @@
+.search-bar {
+    margin: 0 1.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.search-bar input {
+    width: 400px;
+    font-size: 1rem;    
+}
+
+.search-bar img {
+    height: 25px;
+}
+

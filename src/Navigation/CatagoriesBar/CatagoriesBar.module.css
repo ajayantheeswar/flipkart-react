@@ -1,0 +1,14 @@
+.cat-bar-container{
+    min-height: 2rem;
+    width: 100%;
+}
+
+.cat-bar {
+    position: relative;
+    min-width: 80% ;
+}
+
+.cat-bar-list {
+    display: flex;
+}
+

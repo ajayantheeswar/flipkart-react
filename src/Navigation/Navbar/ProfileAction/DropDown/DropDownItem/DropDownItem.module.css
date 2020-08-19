@@ -1,0 +1,20 @@
+.drop-down-item {
+    display: flex;
+    padding: 0.7rem 10px;
+    align-items: center;
+    border-bottom: rgb(211, 210, 210) 1px solid;
+}
+
+.drop-down-item:hover{
+    background-color: #f9f9f9;
+}
+
+.drop-down-item img {
+    width: 1rem;
+}
+
+.drop-down-item p {
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    padding: 0 10px;
+}

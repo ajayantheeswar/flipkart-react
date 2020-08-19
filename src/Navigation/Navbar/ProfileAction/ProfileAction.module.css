@@ -1,0 +1,13 @@
+.profile-action {
+    display: flex;
+}
+
+.cart-btn{
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn img {
+    width: 16px;
+    margin: 0 0.5rem;
+}
