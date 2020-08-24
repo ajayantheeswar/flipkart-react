@@ -14,8 +14,8 @@ const CatagoriesBar = props => {
                 <div className={classes['cat-bar-list']} >
                     {menuList.map( (li,index) => <MenuItem menuItem={li} 
                                         key={index}
-                                        onMouseEnter={() => console.log('g')} 
-                                        onMouseLeave={() => console.log('g')} />)}
+                                        onMouseEnter={() => console.log('')} 
+                                        onMouseLeave={() => console.log('')} />)}
                 </div>
                 <DropDown data = {"data"}/>
             </div>

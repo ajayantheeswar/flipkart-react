@@ -13,29 +13,27 @@ const config = {
 const ProductPreview = props => {
     return (
         <div className={classes['product-preview']}>
-            <div>
-                <Carousel {...config}>
-                    <div>
-                        <img src={Images.NoImg} alt={'imga'} />
-                    </div>
-                    <div>
-                        <img src={Images.NoImg} alt={'imga'} />
-                    </div>
-                    <div>
-                        <img src={Images.NoImg} alt={'imga'} />
-                    </div>
-                    <div>
-                        <img src={Images.NoImg} alt={'imga'} />
-                    </div>
-                    <div>
-                        <img src={Images.NoImg} alt={'imga'} />
-                    </div>
-                </Carousel>
-                <div className={classes['preview-action']}>
-                    <button className={classes['atoc']}>Add to cart</button>
-                    <button className={classes['buy']}>Buy Now</button>
+            <Carousel {...config}>
+                <div>
+                    <img src={Images.NoImg} alt={'imga'} />
                 </div>
-            </div> 
+                <div>
+                    <img src={Images.NoImg} alt={'imga'} />
+                </div>
+                <div>
+                    <img src={Images.NoImg} alt={'imga'} />
+                </div>
+                <div>
+                    <img src={Images.NoImg} alt={'imga'} />
+                </div>
+                <div>
+                    <img src={Images.NoImg} alt={'imga'} />
+                </div>
+            </Carousel>
+            <div className={classes['preview-action']}>
+                <button className={classes['atoc']}>Add to cart</button>
+                <button className={classes['buy']}>Buy Now</button>
+            </div>
         </div>
     )
 }

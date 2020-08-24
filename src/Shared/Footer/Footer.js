@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Footer.module.css';
-import Images from '../../../Assets/Images';
+import Images from '../../Assets/Images';
 
 const footerValues = [
     {

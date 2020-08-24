@@ -3,7 +3,7 @@ import "./App.css";
 import ProductDetails from "./ProductDetails/ProductDetails";
 import Navbar from './Navigation/Navbar/Navbar';
 import CatagoriesBar from './Navigation/CatagoriesBar/CatagoriesBar';
-import Footer from './Shared/HeadCarousel/Footer/Footer';
+import Footer from './Shared/Footer/Footer';
 
 function App() {
   return (

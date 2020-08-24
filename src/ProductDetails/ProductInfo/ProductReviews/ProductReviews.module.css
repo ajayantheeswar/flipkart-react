@@ -1,0 +1,9 @@
+.prod-head {
+    padding: 24px 30px 24px 24px;
+    border-bottom : 1px solid #f0f0f0;
+}
+
+.prod-review-container{
+    border : 1px solid #f0f0f0;
+    color: #212121;
+}

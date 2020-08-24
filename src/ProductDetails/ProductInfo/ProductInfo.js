@@ -3,6 +3,7 @@ import classes from './ProductInfo.module.css'
 import Images from '../../Assets/Images';
 import ProductHighlights from './ProductHignlights/ProductHighlights';
 import ProductSpecifications from './ProductSpecifications/ProductSpecifications';
+import ProductReviews from './ProductReviews/ProductReviews';
 
 
 const getReviewColor = value => {
@@ -44,7 +45,7 @@ const ProductInfo = props => {
                 <ProductHighlights />
              </div>
              <ProductSpecifications />
-             
+             <ProductReviews />
         </div>
     )
 }

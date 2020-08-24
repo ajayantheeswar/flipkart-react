@@ -12,6 +12,7 @@
    align-items: center;
    text-transform: capitalize;
    font-size: 13px;
+   transform: translateY(100%);
 }
 
 .footer-item {

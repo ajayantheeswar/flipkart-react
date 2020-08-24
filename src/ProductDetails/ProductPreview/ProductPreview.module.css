@@ -1,4 +1,9 @@
 .product-preview {
+    align-self: flex-start;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 64px;
+    bottom: 0;
     display: flex;
     flex-direction: column;
 }

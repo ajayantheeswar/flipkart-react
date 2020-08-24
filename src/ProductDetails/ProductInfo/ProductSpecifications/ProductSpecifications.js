@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './ProductSpecifications.module.css'
 
 const Spec = {
@@ -61,11 +61,8 @@ const getSpectList = (catagory) => {
 
 
 const ProductSpecifications = props => {
-
     const spects = props.specs || Spec;
-
     const specsList = []
-
     for(let specCat in spects){
         let ans  = (
             <div className={classes['spec-cat']}>
@@ -76,15 +73,27 @@ const ProductSpecifications = props => {
         specsList.push(ans)
     }
 
+    const [ReadMore, setReadMore] = useState(true)
+
+    const mainClass = !ReadMore ? [classes['product-specification'],classes['expand']].join(' ') : classes['product-specification'] 
     return (
-        <div className={classes['product-specification']}>
-            <div className={classes['header']}>
-                <h2>Specification</h2>
+        <div>
+            <div className={mainClass}>
+                <div className={classes['header']}>
+                    <h2>Specifications</h2>
+                </div>
+                {
+                    specsList
+                }
+                
             </div>
-            {
-                specsList
-            }
+            {ReadMore ? (
+                    <div className={classes['read-more']} onClick = { () => setReadMore(!ReadMore)}> 
+                        <p>Read More</p>
+                    </div>
+                ) : null}
         </div>
+        
     )
 }
 
