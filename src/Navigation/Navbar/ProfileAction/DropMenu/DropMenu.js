@@ -2,7 +2,6 @@ import React ,{useState} from 'react'
 import classes from './DropMenu.module.css';
 import DropDown from '../DropDown/DropDown';
 import DropDownItem from '../DropDown/DropDownItem/DropDownItem';
-import Images from '../../../../Assets/Images';
 
 const DropMenu = props => {
     const [DropDownVisiblity, setDropDownVisiblity] = useState(false)
@@ -14,7 +13,10 @@ const DropMenu = props => {
             <button>{props.name}</button>
             <DropDown visible={DropDownVisiblity}>
                {props.config.map(
-                   ele => <DropDownItem value={ele.optionName} image={ele.image} />
+                   ele => <DropDownItem 
+                            value={ele.optionName} 
+                            key={ele.optionName} 
+                            image={ele.image} />
                )}
             </DropDown>
         </div>

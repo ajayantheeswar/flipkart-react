@@ -1,0 +1,28 @@
+.footer{
+   position: absolute;
+   width: 100%;
+   left: 0;
+   bottom: 0;
+   border-color: #454d5e;
+   background-color: #212121;
+   color: white;
+   display: flex;
+   padding : 1rem 4rem;
+   justify-content: space-evenly;
+   align-items: center;
+   text-transform: capitalize;
+   font-size: 13px;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer-item img{
+    display: block;
+    width: 15px;
+    margin-right: 5px;
+}

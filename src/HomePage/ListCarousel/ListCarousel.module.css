@@ -1,0 +1,21 @@
+.list-carousel{
+    margin: 5px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.car-sec-head{
+    display: flex;
+    padding: 0.7rem 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    border-bottom: solid rgba(0, 0, 0, 0.3) 1px;
+}
+
+.car-sec-head button {
+    background-color: #2874f0;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.52rem 0.7rem;
+}

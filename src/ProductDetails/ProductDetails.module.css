@@ -1,0 +1,9 @@
+.product-details-container{
+    width: 80%;
+    margin: 1rem auto;
+}
+
+
+.product-act-sec{
+    display: flex;
+}

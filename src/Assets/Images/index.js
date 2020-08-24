@@ -8,6 +8,17 @@ import logoutBtn from './start-button.svg';
 import wishlist from './heart.svg'
 import cart from './cart.svg';
 
+import Car1 from './car1.jpg';
+import Car2 from './car2.jpg';
+
+import NoImg from './No_image_available.svg'
+import Gsuitecase from './Gsuitcase.svg';
+import star from './star.svg';
+import giftcards from './giftcards.svg';
+import help from './help.svg'
+
+import fassure from './fassure.png';
+
 const Images = {
     flipkartLogo,
     plus_star,
@@ -17,7 +28,15 @@ const Images = {
     chats,
     logoutBtn,
     wishlist,
-    cart
+    cart,
+    Car1,
+    Car2,
+    NoImg,
+    Gsuitecase,
+    star,
+    giftcards,
+    help,
+    fassure
 }
 
 export default Images;

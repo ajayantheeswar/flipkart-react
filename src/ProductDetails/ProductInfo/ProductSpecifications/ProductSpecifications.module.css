@@ -1,0 +1,21 @@
+.product-specification {
+    border : 1px solid #f0f0f0;
+    color: #212121;
+}
+
+.product-specification .header {
+   padding : 24px 30px 24px 24px;
+   border-bottom : 1px solid #f0f0f0;
+}
+
+.spec-item {
+    display: flex;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.spec-item--key {
+    width : 210px;
+    padding-right: 20px;
+    color: #878787;
+}

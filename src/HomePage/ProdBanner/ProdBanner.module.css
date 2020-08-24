@@ -1,0 +1,15 @@
+.prod-banner {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 5px rgb(235, 235, 235);
+}
+
+.prod-banner img {
+    display: block;
+    max-height: 250px;
+    max-width: 300px;
+    padding: 0 1rem;
+    box-shadow: 1px 1px 5px rgb(235, 235, 235);
+}

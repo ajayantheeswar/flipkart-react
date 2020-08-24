@@ -1,11 +1,20 @@
 import React from "react";
 import "./App.css";
-import HomePage from "./HomePage/HomePage";
+import ProductDetails from "./ProductDetails/ProductDetails";
+import Navbar from './Navigation/Navbar/Navbar';
+import CatagoriesBar from './Navigation/CatagoriesBar/CatagoriesBar';
+import Footer from './Shared/HeadCarousel/Footer/Footer';
 
 function App() {
   return (
 	<div className="App">
-		<HomePage />
+		<React.Fragment>
+			<Navbar/>
+			<CatagoriesBar />
+				<ProductDetails />
+			<Footer />
+		</React.Fragment>
+		
 	</div>
   );
 }

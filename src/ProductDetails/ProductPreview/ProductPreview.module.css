@@ -1,0 +1,26 @@
+.product-preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-action{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.preview-action button {
+    width: 45%;
+    display: block;
+    color : white;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.preview-action button.buy{
+    background-color: red;
+}
+
+.preview-action button.atoc{
+    background-color: orange;
+}

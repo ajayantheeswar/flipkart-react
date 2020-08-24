@@ -1,0 +1,28 @@
+.product-highlights {
+    display: flex;
+}
+
+.product-highlights p{
+    width: 120px;
+    padding-right: 10px;
+    color: #878787;
+    font-weight: 700;
+    font-size :14px;
+}
+
+
+
+.product-highlights li {
+    padding: 0 0 16px 0;
+    display: list-item;
+    font-size: 0.9rem;
+}
+
+.product-highlights li::before {
+    content: "\2022";  
+    color: #c2c2c2; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1rem; 
+     
+  }

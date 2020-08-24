@@ -1,0 +1,7 @@
+.menu-item {
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    color : #2874f0;
+}

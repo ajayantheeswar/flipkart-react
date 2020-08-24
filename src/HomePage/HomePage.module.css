@@ -1,0 +1,8 @@
+.home-body{
+    max-width: 90%;
+    margin: auto;
+}
+
+.home-body > div {
+    margin: 10px 0;
+}
