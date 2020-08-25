@@ -23,7 +23,6 @@ const Navbar = props => {
                 </div>
                 <ProfileAction />
             </div>
-            
         </div>
     )
 }
