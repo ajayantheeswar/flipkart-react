@@ -1,0 +1,21 @@
+.head-menu-list{
+    width: 100%;
+    display: flex;
+    background-color: #f0f0f0;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+}
+
+
+
+.head-menu-list p {
+    color: rgb(149, 149, 149);
+    margin: 0 1rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+}
+
+.head-menu-list p.active{
+    background-color: #2874f0;
+    color: white;
+}

@@ -10,7 +10,8 @@ const DropMenu = props => {
         <div className={props.RClassName ?  props.RClassName.map(cls => classes[cls]).join(' ') : ''} 
              onMouseLeave={() => setDropDownVisiblity(false)}
              onMouseEnter={() => setDropDownVisiblity(true)}>
-            <button>{props.name}</button>
+            <button 
+                onClick={props.onClick}>{props.name}</button>
             <DropDown visible={DropDownVisiblity}>
                {props.config.map(
                    ele => <DropDownItem 

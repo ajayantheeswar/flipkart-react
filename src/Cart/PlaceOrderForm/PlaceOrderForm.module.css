@@ -1,0 +1,53 @@
+.order-form {
+    width : 40%;
+}
+
+.cred__item{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+
+.cred__item label {
+    font-size: 1rem;
+    font-weight:  bold;
+}
+.cred__item input,
+.cred__item select,
+.cred__item textarea {
+    padding: 0.5rem 0.7rem;
+    font-size: 1.1rem;
+    margin: 0.4rem 0;
+    border: rgb(226, 226, 226) solid 1px;
+}
+
+
+
+.cred__item input:focus{
+    border: blue solid 1px;
+}
+
+.cred__item label.password {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-password{
+    display: flex;
+}
+
+.show-password p{
+    display: inline-block;
+    font-size: 0.9rem;
+    margin : 0 5px;
+}
+
+.order-form button{
+    margin: 0.5 3rem;
+    padding: 0.5rem 1.5rem;
+    font-size : 1.2rem;
+    border-radius: 5px;
+    background-color : green;
+    color :white;
+    float : right
+}

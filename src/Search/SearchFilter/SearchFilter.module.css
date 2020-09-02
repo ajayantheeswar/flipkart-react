@@ -1,0 +1,16 @@
+.search-filter {
+    width: 20%;
+    border : 1px solid #f0f0f0;
+}
+
+.search-head{
+    padding : 1rem;
+    border-bottom : 1px solid #f0f0f0;
+    
+}
+
+.search-head h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .3px;
+}

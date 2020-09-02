@@ -1,0 +1,19 @@
+.search-result{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.search-head{
+    display: flex;
+    align-items: center;
+}
+
+.search-head p {
+    font-size: 0.75rem;
+    color: #878787;
+}
+
+.search-head > * {
+    margin-right: 1rem;
+}

@@ -1,54 +1,40 @@
 import React, { useState } from 'react'
 import classes from './ProductSpecifications.module.css'
 
-const Spec = {
-    "General" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
-    },
-    "Display Features" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
-    },
-    "Os & Processor Features" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
-    },
-    "Memory & Storage Features" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
-    },
-    "Camera Features" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
-    },
-    "Call Features" : {
-        "Model Number" :" SM-A515FZK2INS/ SM-A515FZKHINS",
-        "Model Name" : "Galaxy A51",
-        "Color" : "Prism Crush Black",
-        "Browse Type" : "Smartphones",
+const Spec = [
+    {
+        title : "General",
+        list : [
+            {
+                key : "Model Number",
+                value : "SM-A515FZK2INS/ SM-A515FZKHINS"
+            },
+            {
+                key : "Color",
+                value :"Galaxy A51"
+            },
+            {
+                key : "Browse Type" ,
+                value : "Smartphones"
+            },
+            {
+                key : "Model Number",
+                value : "SM-A515FZK2INS/ SM-A515FZKHINS"
+            },
+        ]
     }
-}
+    
+]
 
 
 const getSpectList = (catagory) => {
     // General
     const values = []
-    for(let key in catagory) {
+    for(let ele of catagory) {
         let ans = 
         (<li className={classes['spec-item']}>
-            <p className={classes['spec-item--key']}>{key}</p>
-            <p className={classes['spec-item--value']}>{catagory[key]}</p>
+            <p className={classes['spec-item--key']}>{ele.key}</p>
+            <p className={classes['spec-item--value']}>{ele.value}</p>
         </li>)
         values.push(ans);
     }
@@ -61,19 +47,24 @@ const getSpectList = (catagory) => {
 
 
 const ProductSpecifications = props => {
+
+    console.log(props)
+
     const spects = props.specs || Spec;
     const specsList = []
-    for(let specCat in spects){
+    for(let specCat of spects){
         let ans  = (
             <div className={classes['spec-cat']}>
-                <h3>{specCat}</h3>
-                {getSpectList(spects[specCat])}
+                <h3>{specCat.title}</h3>
+                {getSpectList(specCat.list)}
             </div>
         )
         specsList.push(ans)
     }
 
-    const [ReadMore, setReadMore] = useState(true)
+    console.log(spects);
+
+    const [ReadMore, setReadMore] = useState(!props.readeMoreOFF)
 
     const mainClass = !ReadMore ? [classes['product-specification'],classes['expand']].join(' ') : classes['product-specification'] 
     return (

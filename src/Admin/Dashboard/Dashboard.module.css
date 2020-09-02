@@ -1,0 +1,23 @@
+.dashboard {
+    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    margin: auto;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.dashboard > div {
+    margin-right : 0.75rem;
+    padding: 1rem;
+}
+
+.action-area {
+    width: 100%;
+    display: flex;
+    
+}
+.action-area > div {
+    margin-left : 250px;
+    width : 80%;
+}

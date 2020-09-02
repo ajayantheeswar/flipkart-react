@@ -5,23 +5,9 @@ import ProductHighlights from './ProductHignlights/ProductHighlights';
 import ProductSpecifications from './ProductSpecifications/ProductSpecifications';
 import ProductReviews from './ProductReviews/ProductReviews';
 
-
-const getReviewColor = value => {
-    value = +value;
-    
-    if (value > 3.5){
-        return 'Green';
-    } else if (value > 2.5) {
-        return 'Yellow'
-    }else{
-        return 'Red'
-    }
-
-}
-
+import {getReviewColor} from '../../Shared/Utils/utils';
 
 const ProductInfo = props => {
-
     return (
         <div className={classes['product-info']}>
              <div>
@@ -34,18 +20,18 @@ const ProductInfo = props => {
                     <img src={Images.fassure} alt= "img" /> 
                 </div>
                 <div className={classes['price']} >
-                    <p className={classes['current-price']}>{'₹ ' + (props.currentPrice || '25000')}</p>
-                    <p className={classes['original-price']}>{ '₹ ' + (props.originalPrice || '29000')}</p>
-                    <p className={classes['offer']}>{(props.offer || '13%') + '  Offer'}</p>
+                    {props.pricing.currentPrice ? <p className={classes['current-price']}>{'₹ ' + (props.currentPrice || '25000')}</p> : null}
+                    {props.pricing.originalPrice ? <p className={classes['original-price']}>{ '₹ ' + (props.originalPrice || '29000')}</p> : null}
+                    {props.pricing.offer ? <p className={classes['offer']}>{(props.offer || '13%') + '  Offer'}</p> : null}
                 </div>
                 <div className={classes['description']}>
                     <p>Description</p>
                     <p>{props.description || 'NA '}</p>
                 </div>
-                <ProductHighlights />
+                <ProductHighlights highlights={props.highlights} />
              </div>
-             <ProductSpecifications />
-             <ProductReviews />
+             <ProductSpecifications specs={props.techincalSpecification} />
+             {props.reviews ? <ProductReviews /> : null}
         </div>
     )
 }

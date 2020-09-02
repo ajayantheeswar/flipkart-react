@@ -1,0 +1,57 @@
+.master-container {
+    width : 80%;
+    margin : 1rem auto;
+    padding : 1rem;
+}
+
+
+
+.cart-container{
+    width:100%;
+    margin : 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.cart-container > div,
+.cart-head {
+    border : solid 1px #f0f0f0;
+}
+
+.cart-head {
+    padding: 0.5rem;
+}
+
+.cart-item-list {
+    display: flex;
+    flex-direction: column;
+    padding : 0.5rem
+}
+
+.cart-price-row {
+    display: flex;
+    justify-content: space-between;
+    width : 300px;
+    margin : 0 1rem;
+    font-size : 1.2rem
+}
+
+.cart-details {
+    width : 65%
+}
+
+.place-order {
+    padding: 0.5rem;
+    float: right;
+}
+
+.place-order button{
+    margin: 0.5 3rem;
+    padding: 0.5rem 1.5rem;
+    font-size : 1.2rem;
+    border-radius: 5px;
+    background-color : green;
+    color :white;
+}

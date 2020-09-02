@@ -19,6 +19,9 @@ import help from './help.svg'
 
 import fassure from './fassure.png';
 
+import loginIMG from './login_img.png'
+import show from './show.svg'
+
 const Images = {
     flipkartLogo,
     plus_star,
@@ -36,7 +39,9 @@ const Images = {
     star,
     giftcards,
     help,
-    fassure
+    fassure,
+    loginIMG,
+    show
 }
 
 export default Images;

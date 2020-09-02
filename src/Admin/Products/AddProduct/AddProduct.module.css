@@ -1,0 +1,65 @@
+.input-element {
+    margin : 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.input-element > label {
+    min-width: 130px;
+}
+
+.input-element > label,
+.input-element > input,
+.input-element > div,
+.input-element > select {
+    display: inline-block;
+    margin : 0 1rem
+}
+
+.input-element > input,
+.input-element > select,
+.input-element > textarea {
+    border : 1px solid #f0f0f0;
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    resize: none;
+}
+
+.upload {
+    display: inline-block;
+    background-color: #2874f0;
+    color : white;
+    text-align: center;
+    padding: 0.3rem;
+    text-transform: capitalize;
+    border-radius: 4px;
+}
+
+.images-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.images-picker label {
+    width : 130px;
+}
+
+.images-picker--choser{
+    width: 600px;
+}
+
+.image-view-container{
+    width: 600px;
+    
+}
+
+.input-element > button {
+    font-size : 1rem;
+    padding : 0.7rem 1.3rem;
+    font-weight: bold;
+    background-color: #2874f0;;
+    color : white ;
+    border-radius: 5px;
+
+}

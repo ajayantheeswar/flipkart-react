@@ -1,0 +1,31 @@
+.side-bar {
+    border-right : #f1f1f1 solid 1.5px;
+    height: 100%;
+    align-self: flex-start;
+    position: fixed;
+    top : 3.6rem;
+    bottom: 0;
+    min-width : 250px;
+}
+
+.nav-head {
+    padding: 1rem;
+    border-bottom : #f1f1f1 solid 1.5px;
+}
+
+.nav-routes{
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-routes p {
+    padding : 12px 1rem;
+    font-size: 1.13rem;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+
+.nav-routes p.active{
+    background-color: #2874f0;
+    color : white;
+}

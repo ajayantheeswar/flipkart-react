@@ -4,12 +4,13 @@ import ProductPreview from './ProductPreview/ProductPreview';
 import ProductInfo from './ProductInfo/ProductInfo';
 
 
-const ProductDetails = () => {
+
+const ProductDetails = props => {
     return (
         <div className={classes['product-details-container']}>
             <div className={classes['product-act-sec']} >
-                <ProductPreview />
-                <ProductInfo />
+                <ProductPreview product={props.product} />
+                <ProductInfo {...props.product} />
             </div>
         </div>
     )

@@ -1,0 +1,45 @@
+.add-value input {
+    padding: 0.3rem 0.7rem;
+    font-size : 1.1rem;
+    border : 1px solid #CCC;
+}
+
+.section-title {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title label {
+    margin : 0.5rem 0;
+    font-weight: bold;
+}
+
+.section-list-input > input{
+    margin : 8px;
+}
+
+.section-list-input button {
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.feature-list {
+    padding : 5px;
+}
+
+.feature-list--item {
+    display: flex;
+}
+
+.feature-list--item b,
+.feature-list--item p{
+    margin: 8px;
+    width: 120px;
+}
+.add-feature {
+    padding : 0.3rem 1rem;
+    color : white;
+    background-color: #2874f0;
+    border-radius: 5px;
+}

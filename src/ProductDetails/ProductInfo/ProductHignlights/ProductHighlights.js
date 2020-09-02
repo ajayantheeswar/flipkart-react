@@ -15,7 +15,7 @@ const ProductHighlights = props => {
 
     return (
         <div className={classes['product-highlights']}>
-            <p>Highlights</p>
+            {!props.hideHead ? <p>Highlights</p> : null}
             <ul>
                 {highlights.map ((ele,index) => 
                     (<li key={index}>{ele}</li>))}

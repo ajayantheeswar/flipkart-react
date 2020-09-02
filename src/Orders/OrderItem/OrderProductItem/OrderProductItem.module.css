@@ -1,0 +1,29 @@
+.product-details{
+    width : 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.product-details img {
+    width : 130px;
+}
+
+.order-product-item {
+    padding : 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.delivery-details {
+    display: flex;
+}
+
+.delivery-details > div {
+    margin: 2rem;
+}
+
+.prod-det > p{
+    margin : 1rem 4rem;
+}

@@ -1,0 +1,12 @@
+.catagories-containter{
+    width : 80%;
+}
+
+.catagories-containter hr {
+    border : 1px solid #c8c7c7;
+}
+
+.catagories-containter > div,
+.catagories-containter > ul {
+    margin : 8px 0;
+}

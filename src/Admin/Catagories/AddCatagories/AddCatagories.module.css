@@ -1,0 +1,26 @@
+.add-products {
+    padding-top: 3rem;
+    
+}
+
+.input-element {
+    margin : 1rem 0;
+}
+
+.input-element > label {
+    min-width: 130px;
+}
+
+.input-element > label,
+.input-element > input,
+.input-element > div {
+    display: inline-block;
+    margin : 0 1rem
+}
+
+.input-element input {
+    border : 1px solid #f0f0f0;
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+}

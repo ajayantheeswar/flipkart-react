@@ -1,0 +1,58 @@
+.add-value {
+    width: 80%;
+    
+}
+
+
+.value-input-field {
+    width: 100%;
+}
+
+.value-input-field > *{
+    display: inline-block;
+    margin: 10px;
+}
+
+.value-input-field > input {
+    border : 1px solid #f0f0f0;
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    resize: none;
+    width : 450px
+}
+
+.value-input-field > button {
+    padding: 0.3rem 0.6rem;
+    color: white;
+    background-color: blue;
+    border-radius : 4px;
+}
+
+.value-output-field{
+    overflow: auto;
+    max-height: 300px;
+}
+
+.value-output-field::-webkit-scrollbar {
+    display: none;
+    overflow-y: hidden;
+    overflow-x: scroll;    
+}
+
+.output-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(241, 240, 240);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+.output-item > p {
+    margin : 5px;
+}
+
+.output-item > p.exit {
+    font-size: 1.2rem;
+}
