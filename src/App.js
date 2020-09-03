@@ -4,7 +4,7 @@ import Navbar from './Navigation/Navbar/Navbar';
 import CatagoriesBar from './Navigation/CatagoriesBar/CatagoriesBar';
 import Footer from './Shared/Footer/Footer';
 /* import Search from "./Search/Search"; */
-import {publicUserRoutes} from './routes';
+import {publicUserRoutes,publicAdminRoutes} from './routes';
 
 import { Switch, Route } from "react-router";
 
@@ -20,7 +20,7 @@ class App extends React.Component {
 					<Navbar/>
 					<CatagoriesBar />
 					<Switch>
-						{publicUserRoutes}
+						{[...publicUserRoutes,...publicAdminRoutes]}
 					</Switch>
 					<Footer />
 				</React.Fragment>

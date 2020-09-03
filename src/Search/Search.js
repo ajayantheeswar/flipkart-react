@@ -6,7 +6,6 @@ import SearchResults from './SearchResults/SearchResults'
 const Search = props => {
     return (
         <div className={classes['search-container']}>
-            <SearchFilter />
             <SearchResults />
         </div>
     )

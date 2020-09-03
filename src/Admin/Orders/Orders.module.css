@@ -1,0 +1,4 @@
+.products-container > div,
+.products-container > ul {
+    margin : 8px 0;
+}

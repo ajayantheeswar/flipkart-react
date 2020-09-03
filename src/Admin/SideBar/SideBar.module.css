@@ -16,16 +16,19 @@
 .nav-routes{
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.nav-routes p {
+.nav-routes .rou {
     padding : 12px 1rem;
     font-size: 1.13rem;
     border-radius: 5px;
     margin-bottom: 3px;
+    color : black;
 }
 
-.nav-routes p.active{
+.nav-routes .rou-active{
     background-color: #2874f0;
     color : white;
 }

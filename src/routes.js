@@ -16,6 +16,10 @@ export const publicUserRoutes = [
     
 ]
 
+export const publicAdminRoutes = [
+    <Route path={'/admin/dashboard/'} component={Dashboard} />,
+]
+
 /*export const privilagedRoutes = [
     <Route path={'/cart'} exact component={}
 ]*/
