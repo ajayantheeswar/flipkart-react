@@ -6,6 +6,7 @@ import AuthPage from './AuthForm/AuthPage';
 const AuthContainer = props => {
 
     const [isSignUp,setIsSignUp] = useState(false);
+    const [isAdmin,setIsAdmin] = useState(false);
 
     return (
         <div className={classes['auth-container']}>
@@ -17,7 +18,9 @@ const AuthContainer = props => {
                 </div>
                 <div className={classes['auth-page-container']}>
                     <AuthPage
-                        isAdmin={false}
+                        onSuccessLogin={() => props.authShowHandler(false)}
+                        isAdmin={isAdmin}
+                        onAdminChange={setIsAdmin}
                         isSignup ={isSignUp} 
                         setSignUp={setIsSignUp} />
                 </div>

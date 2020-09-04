@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ListThumbnail from './ListThumbnail/ListThumbnail';
 
 const ListCarousel = props => {
+    console.log(props)
     const settings = {
         dots: false,
         infinite: true,
@@ -47,15 +48,7 @@ const ListCarousel = props => {
                 <button>View All</button>
             </div>
             <Slider {...settings} arrows={true}>
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
-                <ListThumbnail />
+                {props.items.map((item,i) => <ListThumbnail key={i} {...item} />)}
             </Slider>
         </div>
     )

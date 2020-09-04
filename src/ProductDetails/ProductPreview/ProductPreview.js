@@ -7,7 +7,9 @@ import axios from '../../Store/Interceptor';
 
 const config = {
     axis : 'vertical',
-    width : '470px'
+    width : '470px',
+    height : '500px',
+    thumbWidth : 'auto'
 }
 
 const addToCart = (product) => {
@@ -26,8 +28,8 @@ const ProductPreview = props => {
         <div className={classes['product-preview']}>
             <Carousel {...config}>
                 { props.product.imageURLs.length > 0 ?  props.product.imageURLs.map((ele,i) => (
-                    <div key={i}>
-                        <img src={ele} alt={'imga'} />
+                    <div style={{width : 'auto' , backgroundColor :'white'}} key={i}>
+                        <img style={{width : 'auto' , backgroundColor :'white'}} src={ele} alt={'imga'} />
                     </div>
                 )) : 
                 <div>
@@ -35,9 +37,9 @@ const ProductPreview = props => {
                 </div>}
             </Carousel>
             <div className={classes['preview-action']}>
-                <button className={classes['atoc']}
+                {props.isAuth ? <button className={classes['atoc']}
                     onClick={() => addToCart(props.product)}>Add to cart</button>
-                <button className={classes['buy']}>Buy Now</button>
+                 : <p className={classes['need-login']}>{'Login to Purchase'}</p>}
             </div>
         </div>
     )

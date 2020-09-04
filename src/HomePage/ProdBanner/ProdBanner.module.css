@@ -8,8 +8,8 @@
 
 .prod-banner img {
     display: block;
-    max-height: 250px;
-    max-width: 300px;
+    max-height: 500px;
+    max-width: 550px;
     padding: 0 1rem;
     box-shadow: 1px 1px 5px rgb(235, 235, 235);
 }

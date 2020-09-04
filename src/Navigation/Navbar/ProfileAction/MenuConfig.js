@@ -3,22 +3,16 @@ import Images from '../../../Assets/Images';
 export const MenuConfing = {
     Login : {
         Name : 'Login',
-        Values : [{
-            optionName : 'My profile',
-            image : Images.myprofile
-        },
+        Values : [
         {
             optionName : 'orders',
-            image : Images.orders
-        },{
-            optionName : 'wishlist',
-            image : Images.wishlist
-        },{
-            optionName : 'chats',
-            image : Images.chats
+            image : Images.orders,
+            path : '/my-orders',
         },{
             optionName : 'logout',
-            image : Images.logoutBtn
+            image : Images.logoutBtn,
+            path : '/logout',
+            
         }]
     }
 }

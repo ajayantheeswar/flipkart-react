@@ -27,15 +27,22 @@ const cancelOrder = (orderID,successFunc,failFunc) => {
 const Orders = props => {
 
     const [orders, setOrders] = useState([]);
+    const [loading , setLoading] = useState(true)
     
-    const updateOrders = () => getOrders((res) =>  setOrders(res.data.orders),
-                                    (err) => console.log(err))
+    const updateOrders = () => {
+        getOrders((res) =>  {
+                setOrders(res.data.orders)
+                setLoading(false);
+            },(err) => console.log(err))
+        
+        setLoading(false)
+    }
 
     useEffect(() => {
         updateOrders();
     },[]);
 
-    if(!orders.length > 0){
+    if(loading > 0){
         return <Spinner />;
     }
 

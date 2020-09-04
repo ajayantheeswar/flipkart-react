@@ -7,10 +7,10 @@ const AuthStart = () => {
     }
 }
 
-const AuthSuccess = () => {
+const AuthSuccess = (isAdmin) => {
     return {
         type:actionTypes.AUTH_SUCCESS,
-        isAdmin : localStorage.getItem('isAdmin')
+        isAdmin : isAdmin
     }
 }
 
@@ -21,8 +21,8 @@ const AuthFail = (err) => {
     }
 }
 
-export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
-
+export const AuthStartAsync = (isSignup,authDetails,successFunc) => dispatch => {
+    console.log(authDetails)
     let url =  `/auth/${authDetails.isAdmin ? 'admin' : 'user'}/${isSignup ? 'signup' : 'signin'}`; 
     //let url = `/auth/${isSignup ? 'signup' : 'signin'}`;
     dispatch(AuthStart())
@@ -37,7 +37,8 @@ export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
             localStorage.setItem('email',data.user.email);
             localStorage.setItem('isAdmin',authDetails.isAdmin);
             localStorage.setItem('authType',authDetails.authType);
-            dispatch(AuthSuccess())
+            successFunc()
+            dispatch(AuthSuccess(authDetails.isAdmin))
         })
         .catch(err => {
             console.log(err);
@@ -51,7 +52,7 @@ export const AuthStartAsync = (isSignup,authDetails) => dispatch => {
 
 export const AuthCheckAsync = () => dispatch => {
     if(localStorage.getItem('token') && localStorage.getItem('name')){
-        dispatch(AuthSuccess())
+        dispatch(AuthSuccess(localStorage.getItem('isAdmin')))
     }
 }
 

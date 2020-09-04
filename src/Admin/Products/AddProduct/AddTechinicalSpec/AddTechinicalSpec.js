@@ -74,6 +74,16 @@ const AddTechinicalSpec = props => {
                             key : key.value,
                             value : value.value
                         })
+                        setKey({
+                            value : '',
+                            valid : false,
+                            touched : false
+                        })
+                        setValue({
+                            value : '',
+                            valid : false,
+                            touched : false
+                        })
                     }}>Add</button>
             </div>
             <ul className={classes['feature-list']}>
@@ -86,10 +96,18 @@ const AddTechinicalSpec = props => {
             </ul>
             <button
                 className={classes['add-feature']}
-                onClick={() => props.onAdd({
-                    title : Title.value,
-                    list : featureList
-                })}
+                onClick={() => {
+                    props.onAdd({
+                        title : Title.value,
+                        list : featureList
+                    })
+                    setTitle ({
+                        value : '',
+                        valid : false,
+                        touched : false
+                    })
+                    
+                }}
             >Add Feature</button>
         </div>
     )

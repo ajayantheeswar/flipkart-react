@@ -5,6 +5,10 @@ import * as AuthActions from '../../Store/Actions/Auth';
 import { connect } from 'react-redux'
 import { GoogleLogin } from 'react-google-login';
 import Images from '../../Assets/Images';
+import Toggle from 'react-toggle'
+
+
+import "react-toggle/style.css";
 
 class AuthPage extends Component {
 
@@ -61,6 +65,7 @@ class AuthPage extends Component {
         } )
     }
 
+    
     onSignUpClick = () => {
         const credientials = {
             Name : this.state.auth.username.value,
@@ -70,7 +75,7 @@ class AuthPage extends Component {
             authType : 'EMP'
         }
 
-        this.props.signUp(credientials);
+        this.props.signUp(credientials,this.props.onSuccessLogin);
     }
 
     onLoginClick = () => {
@@ -80,16 +85,13 @@ class AuthPage extends Component {
             isAdmin : !!this.props.isAdmin,
             authType : 'EMP'
         }
-
-        this.props.signIn(credientials);
+        this.props.signIn(credientials,this.props.onSuccessLogin);
     }
-
-
     googleOnSuccess = (result) => {
         console.log(result);
         result.isAdmin =  !!this.props.isAdmin;
         result.authType = 'Google';
-        this.props.isSignup ? this.props.signUp(result) : this.props.signIn(result);
+        this.props.isSignup ? this.props.signUp(result,this.props.onSuccessLogin) : this.props.signIn(result,this.props.onSuccessLogin);
     }
 
     getProfileObject = (result) => result.profileObj;
@@ -98,7 +100,16 @@ class AuthPage extends Component {
        
         return (
             <React.Fragment>
-                
+                <div className={classes['admin-toggler']}>
+                    <span>Admin</span>
+                    <label>
+                        <Toggle
+                            defaultChecked={this.props.isAdmin}
+                            onChange={(event) => {
+                                this.props.onAdminChange(event.target.checked)
+                            }} />
+                    </label>
+                </div>
                 <div style={{margin:'auto', textAlign:'center'}}>
                     <GoogleLogin
                         clientId="590731925935-p80q78ga8hv34ck97q39epgfjlf9idu4.apps.googleusercontent.com"
@@ -158,15 +169,15 @@ class AuthPage extends Component {
 
 const mapPropsToState = state => {
     return {
-      isAuth : state.auth.isAuth,
+      isAuth : state.auth.auth,
       error : state.auth.error
     }
   }
   
   const mapPropsToDisPatch = dispatch => {
     return {
-      signIn : (credientials) => dispatch(AuthActions.AuthStartAsync(false,credientials)),
-      signUp : (credientials) => dispatch(AuthActions.AuthStartAsync(true,credientials)),
+      signIn : (credientials,successFunc) => dispatch(AuthActions.AuthStartAsync(false,credientials,successFunc)),
+      signUp : (credientials,successFunc) => dispatch(AuthActions.AuthStartAsync(true,credientials,successFunc)),
     }
   }
 

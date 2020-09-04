@@ -10,8 +10,8 @@
 }
 
 .list-thumbnail img {
-    width: 100%;
-    max-height: 150px;
+    max-width: 100%;
+    
     display: block;
     padding: 5px 0;
 }

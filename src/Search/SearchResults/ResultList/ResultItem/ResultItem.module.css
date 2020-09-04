@@ -5,6 +5,10 @@
     padding: 1rem;
 }
 
+.prod-pic{
+    align-self: center;
+}
+
 .prod-pic img{
     width: 200px;
 }

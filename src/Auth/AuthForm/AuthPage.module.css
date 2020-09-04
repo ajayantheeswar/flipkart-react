@@ -210,3 +210,13 @@
     text-decoration: underline;
     font-weight: 300;
 }
+
+.admin-toggler {
+    display: flex;
+    align-items: center;
+}
+
+.admin-toggler span {
+    color : black;
+    margin: 1rem;
+}

@@ -3,11 +3,7 @@ import ResultItem from './ResultItem/ResultItem';
 const ResultList = props => {
     return (
         <ul>
-           <ResultItem />
-           <ResultItem />
-           <ResultItem />
-           <ResultItem />
-           <ResultItem /> 
+           {props.productList.map(product => <ResultItem product={product} />)}
         </ul>
     )
 }

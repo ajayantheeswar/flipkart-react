@@ -12,16 +12,23 @@ const DropMenu = props => {
              onMouseEnter={() => setDropDownVisiblity(true)}>
             <button 
                 onClick={props.onClick}>{props.name}</button>
-            <DropDown visible={DropDownVisiblity}>
-               {props.config.map(
-                   ele => <DropDownItem 
-                            value={ele.optionName} 
-                            key={ele.optionName} 
-                            image={ele.image} />
-               )}
-            </DropDown>
+            <DropDown visible={DropDownVisiblity && props.isAuth}>
+                {props.children}
+            </DropDown> 
         </div>
     )
 }
 
 export default DropMenu
+
+/*
+{props.config.map(
+                   ele => <DropDownItem 
+                            value={ele.optionName} 
+                            key={ele.optionName}
+                            path={ele.path} 
+                            image={ele.image} />
+               )}
+
+
+*/

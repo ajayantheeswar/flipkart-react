@@ -24,6 +24,7 @@ const getformData = (product) => {
     const formData = new FormData();
     formData.append('productName',product.productName.value);
     formData.append('catagoryName',product.catagoryName.value);
+    console.log(product.catagoryName.value);
     formData.append('description',product.descriptionName.value);
     formData.append('price',product.price.value);
     formData.append('highlights',JSON.stringify(product.highlights));
@@ -44,7 +45,7 @@ const AddProduct = props => {
     })
 
     const [catagoryName, setcatagoryName] = useState({
-        value : '',
+        value : 'Mobiles',
         isValid : false,
         touched : false
     })
@@ -87,8 +88,8 @@ const AddProduct = props => {
 
     // Network Call Function 
     const addProductHandler = () => {
-        addProduct ({productName
-                    ,catagoryName,
+        addProduct ({productName,
+                    catagoryName,
                     images,
                     descriptionName,
                     price,
@@ -120,12 +121,12 @@ const AddProduct = props => {
                 <label>Catagory :</label>
                 <select 
                 value = {catagoryName.value}
-                onChange={(event) => setcatagoryName({
+                onChange={(event) => { console.log(catagoryName.value); setcatagoryName({
                     value : event.target.value,
                     isValid : event.target.value !== '',
                     touched : true
-                })}>
-                    <option value="Mobiles">Mobiles</option>
+                })}}>
+                    <option value="Mobiles" selected>Mobiles</option>
                     <option value={"Tv & Applicances"}>{'Tv & Applicances'}</option>
                     <option value="Laptops">Laptops</option>
                     <option value="Cameras">Cameras</option>

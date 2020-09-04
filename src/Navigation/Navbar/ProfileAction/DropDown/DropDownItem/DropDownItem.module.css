@@ -13,8 +13,9 @@
     width: 1rem;
 }
 
-.drop-down-item p {
+.drop-down-item .nav-lin {
     text-transform: capitalize;
     font-size: 0.9rem;
     padding: 0 10px;
+    color :black
 }

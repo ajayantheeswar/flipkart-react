@@ -1,7 +1,7 @@
 import * as ActionTypes from '../Actions/ActionTypes';
 
 const initialState = {
-    isAdmin : null,
+    isAdmin : false,
     auth : false,
     loading : true,
     error : null
@@ -37,6 +37,7 @@ const reducer = (state=initialState, action) => {
                     loading : false,
                     auth : false,
                     error : null,
+                    isAdmin : false
                 }
         default :
             return state

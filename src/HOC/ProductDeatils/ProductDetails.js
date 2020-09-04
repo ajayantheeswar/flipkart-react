@@ -4,6 +4,7 @@ import Spinner from '../../Shared/Spinner/Spinner';
 
 import ProductDetailsViewer from '../../ProductDetails/ProductDetails';
 import Axios from 'axios';
+import { connect } from 'react-redux';
  
 class ProductDetails extends React.Component {
     
@@ -49,7 +50,7 @@ class ProductDetails extends React.Component {
         }
 
         if(this.state.product){
-            return <ProductDetailsViewer product={this.state.product} />
+            return <ProductDetailsViewer isAuth={this.props.isAuth} product={this.state.product} />
         }
 
         if(!this.state.productFound) {
@@ -62,4 +63,13 @@ class ProductDetails extends React.Component {
     }
 }
 
-export default ProductDetails
+const mapPropsToState = state => {
+	return {
+	  isAuth : state.auth.auth,
+	  isAdmin : state.auth.isAdmin
+	}
+  }
+  
+
+
+export default  connect(mapPropsToState)(ProductDetails)
