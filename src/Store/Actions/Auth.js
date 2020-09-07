@@ -21,6 +21,25 @@ const AuthFail = (err) => {
     }
 }
 
+const OTPStart = (err) => {
+    return {
+        type:actionTypes.AUTH_OTP_ENABLED,
+    }
+}
+
+export const OTPSuccess = (isAdmin) => {
+    return {
+        type:actionTypes.AUTH_OTP_SUCCESS,
+        isAdmin : isAdmin
+    }
+}
+
+export const OTPFail = () => {
+    return {
+        type:actionTypes.AUTH_OTP_FAIL,
+    }
+}
+
 export const AuthStartAsync = (isSignup,authDetails,successFunc) => dispatch => {
     console.log(authDetails)
     let url =  `/auth/${authDetails.isAdmin ? 'admin' : 'user'}/${isSignup ? 'signup' : 'signin'}`; 
@@ -32,13 +51,13 @@ export const AuthStartAsync = (isSignup,authDetails,successFunc) => dispatch => 
         }
     }).then(({data}) => {
             console.log(data);
-            localStorage.setItem('token',data.Token);
-            localStorage.setItem('name',data.user.name);
-            localStorage.setItem('email',data.user.email);
-            localStorage.setItem('isAdmin',authDetails.isAdmin);
-            localStorage.setItem('authType',authDetails.authType);
-            successFunc()
-            dispatch(AuthSuccess(authDetails.isAdmin))
+            if(!data.isOTP){
+                setLocalStorage(data);
+                successFunc()
+                dispatch(AuthSuccess(authDetails.isAdmin))
+            }else{
+                dispatch(OTPStart())
+            }
         })
         .catch(err => {
             console.log(err);
@@ -52,13 +71,23 @@ export const AuthStartAsync = (isSignup,authDetails,successFunc) => dispatch => 
 
 export const AuthCheckAsync = () => dispatch => {
     if(localStorage.getItem('token') && localStorage.getItem('name')){
-        dispatch(AuthSuccess(localStorage.getItem('isAdmin')))
+        dispatch(AuthSuccess((localStorage.getItem('isAdmin') === 'true')))
     }
 }
+
+
 
 export const AuthLogout = () => {
     localStorage.clear()
     return {
         type : actionTypes.AUTH_LOGOUT
     }
+}
+
+const setLocalStorage = (data) => {
+    localStorage.setItem('token',data.Token);
+    localStorage.setItem('name',data.user.name);
+    localStorage.setItem('email',data.user.email);
+    localStorage.setItem('isAdmin',data.isAdmin);
+    localStorage.setItem('authType',data.authType);
 }

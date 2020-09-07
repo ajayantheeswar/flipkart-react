@@ -1,0 +1,31 @@
+.otp-container {
+    color : black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.otp-info p{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.otp-action input {
+    font-size : 1.1rem;
+    padding : 0.3rem 1rem;
+    border : 1px solid #f0f0f0;
+    margin-top : 3rem;
+    margin-right : 1rem;
+}
+
+.otp-action button {
+    padding : 5px;
+    background-color : orange;
+    color : white;
+    border-radius: 5px;
+}
+
+.input-error {
+    color : red;
+}

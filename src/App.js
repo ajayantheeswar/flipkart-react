@@ -35,6 +35,8 @@ class App extends React.Component {
 					<Switch>
 						<Route path='/logout' render={(props) => {this.props.logout(); props.history.replace('/'); return null }} />
 						{(() => {
+							console.log(this.props.isAuth);
+							console.log(this.props.isAdmin);
 							if(this.props.isAuth && this.props.isAdmin){
 								return [...adminProtectedRoutes]
 								

@@ -3,7 +3,6 @@ import classes from './ListThumbnail.module.css';
 import Images from '../../../Assets/Images';
 
 const ListThumbnail = props => {
-    console.log(props)
     return (
         <div className={classes['list-thumbnail']}>
             <img src={props.image || Images.NoImg} alt='img' />

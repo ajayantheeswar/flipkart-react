@@ -1,0 +1,11 @@
+.carousel .thumb .ProductPreview-Image--container {
+    width : auto   ;
+    height: 100px;
+    background-color :white;
+}
+
+.carousel .slide .ProductPreview-Image--container {
+    width : auto   ;
+    height: 300px;
+    background-color :white;
+}

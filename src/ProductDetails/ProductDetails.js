@@ -6,7 +6,6 @@ import { withRouter } from 'react-router';
 import ProductSpecifications from './ProductInfo/ProductSpecifications/ProductSpecifications';
 
 
-
 const ProductDetails = props => {
     console.log(props)
     return (

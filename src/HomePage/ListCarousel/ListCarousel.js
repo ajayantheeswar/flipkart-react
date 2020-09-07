@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import ListThumbnail from './ListThumbnail/ListThumbnail';
 
 const ListCarousel = props => {
-    console.log(props)
     const settings = {
         dots: false,
         infinite: true,

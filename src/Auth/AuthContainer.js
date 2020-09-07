@@ -2,11 +2,16 @@ import React , {useState} from 'react'
 import classes from './AuthContainer.module.css'
 import Images from '../Assets/Images'
 import AuthPage from './AuthForm/AuthPage';
+import { connect } from 'react-redux';
+import OTPAuthentication from './OTPAuthentication/OTPAuthentication';
+
+import * as action from '../Store/Actions/Auth';
 
 const AuthContainer = props => {
 
     const [isSignUp,setIsSignUp] = useState(false);
     const [isAdmin,setIsAdmin] = useState(false);
+    const [email,setEmail] = useState('');
 
     return (
         <div className={classes['auth-container']}>
@@ -17,18 +22,39 @@ const AuthContainer = props => {
                     <img src={Images.loginIMG} alt='Login' />
                 </div>
                 <div className={classes['auth-page-container']}>
-                    <AuthPage
+                    {!props.isOTP ? <AuthPage
                         onSuccessLogin={() => props.authShowHandler(false)}
                         isAdmin={isAdmin}
                         onAdminChange={setIsAdmin}
+                        setEmail = {setEmail}
                         isSignup ={isSignUp} 
-                        setSignUp={setIsSignUp} />
+                        setSignUp={setIsSignUp} /> : 
+                            <OTPAuthentication 
+                                email= {email}
+                                isAdmin={isAdmin} />} 
                 </div>
                 <p className={classes['close-cross']}
-                    onClick={() => props.authShowHandler(false)}>X</p>
+                    onClick={() => {
+                        props.authShowHandler(false);
+                       if(props.isOTP) props.otpFail() 
+                    }}>X</p>
             </div>
         </div>
     )
 }
 
-export default AuthContainer
+const mapPropsToState = state => {
+    return {
+        isAuth : state.auth.auth,
+        isAdmin : state.auth.isAdmin,
+        isOTP : state.auth.isOTP
+    }
+}
+
+const mapDispatchToSProps = dispatch => {
+    return {
+        otpFail : () => dispatch(action.OTPFail())
+    }
+}
+
+export default connect(mapPropsToState,mapDispatchToSProps)(AuthContainer)

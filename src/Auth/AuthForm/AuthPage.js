@@ -85,6 +85,7 @@ class AuthPage extends Component {
             isAdmin : !!this.props.isAdmin,
             authType : 'EMP'
         }
+        this.props.setEmail(this.state.auth.email.value)
         this.props.signIn(credientials,this.props.onSuccessLogin);
     }
     googleOnSuccess = (result) => {
