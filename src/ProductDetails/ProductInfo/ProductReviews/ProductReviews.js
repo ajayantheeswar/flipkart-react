@@ -8,14 +8,10 @@ const ProductReviews = props => {
         <div className={classes['prod-review-container']}>
             <div className={classes['prod-head']}>
                 <h3>{'Product Ratings & Reviews '}</h3>
+                <button>Rate This Product</button>
             </div>
             <ul>
-                <ReviewItem />
-                <ReviewItem />
-                <ReviewItem />
-                <ReviewItem />
-                <ReviewItem />
-                <ReviewItem />
+                {props.reviews.map(review => <ReviewItem />)}
             </ul>
         </div>
     )

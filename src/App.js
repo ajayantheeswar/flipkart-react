@@ -33,7 +33,7 @@ class App extends React.Component {
 					<Navbar/>
 					{this.props.isAdmin ? null : <CatagoriesBar /> }
 					<Switch>
-						<Route path='/logout' render={(props) => {this.props.logout(); props.history.replace('/'); return null }} />
+						<Route path='/logout' exact render={(props) => {this.props.logout(); return null }} />
 						{(() => {
 							console.log(this.props.isAuth);
 							console.log(this.props.isAdmin);

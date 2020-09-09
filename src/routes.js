@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, withRouter } from "react-router";
+import { Route, withRouter, Redirect } from "react-router";
 
 import ProductDetails from "./HOC/ProductDeatils/ProductDetails"; 
 import HomePage from './HomePage/HomePage';

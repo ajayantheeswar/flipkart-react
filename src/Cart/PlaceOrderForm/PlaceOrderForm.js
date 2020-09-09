@@ -10,6 +10,12 @@ const placeOrder = (deliveryDetails, successfunc , failFunc) => {
         .catch(err => console.log(err))
 }
 
+const placeOrderRazorPay = (deliveryDetails, successfunc , failFunc) => {
+    axios.post('/user/create-razor-order',deliveryDetails.amount)
+        .then(response => successfunc(response))
+        .catch(err => console.log(err))
+}
+
 const PlaceOrderForm = props => {
     console.log(props)
     const [address,setAddress] = useState({
@@ -28,6 +34,8 @@ const PlaceOrderForm = props => {
         touched : true
     });
 
+    const [orderID,setOrderID] = useState('')
+
     const onPlaceOrderClick = () => {
         const deliveryDetails = {
             address : address.value,
@@ -35,10 +43,34 @@ const PlaceOrderForm = props => {
             deliveryMode : deliveryMode.value
         }
 
-        placeOrder(deliveryDetails,(res) => props.history.push('/'))
-
+        if(deliveryMode === 'Cash on Delivery') {
+            placeOrder(deliveryDetails,(res) => props.history.push('/'),(err)=> console.log(err))
+        }else{
+            placeOrderRazorPay(deliveryDetails,
+                               ({data}) => {
+                                    const {id,amount} = data.razorOrder
+                                    const options = {
+                                        key : process.env.REACT_APP_RAZOR_PAY_KEY,
+                                        amount : amount,
+                                        order_id : id,
+                                        name: 'Payments',
+                                        description: 'Donate yourself some time',
+                                        handler : async (paymentDetails) => {
+                                            placeOrder({deliveryDetails,paymentDetails},(res) => props.history.push('/'),(err)=> console.log(err))
+                                        },
+                                        notes: {
+                                            address: address.value,
+                                        },
+                                        theme: {
+                                            color: '#9D50BB',
+                                        },
+                                    }
+                                    const rzp1 = new window.Razorpay(options);
+                                    rzp1.open();
+                               },(err)=> console.log(err))
+        }
+        
     }
-
 
     return (
         <div className={classes['order-form']}>
@@ -85,7 +117,7 @@ const PlaceOrderForm = props => {
                             })
                         }}
                         value={deliveryMode.value} >
-                        <option value={'Cash on Delivery'}>Cash on Delivery</option>
+                        <option value={'Cash on Delivery'} selected>Cash on Delivery</option>
                         <option value={'Debit Card'}>Debit Card</option>
                         <option value={'UPI'}>UPI</option>
                     </select>

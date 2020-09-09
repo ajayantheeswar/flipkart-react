@@ -14,9 +14,6 @@ const getOrders = (successFunc,failFunc) => {
         .catch(err => failFunc(err))
 }
 
-
-
-
 const cancelOrder = (orderID,successFunc,failFunc) => {
     axois.post('/user/cancel-order',{
         orderID : orderID

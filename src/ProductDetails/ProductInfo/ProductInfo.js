@@ -31,7 +31,7 @@ const ProductInfo = props => {
                 <ProductHighlights highlights={props.highlights} />
              </div>
              <ProductSpecifications specs={props.techincalSpecification} />
-             {props.reviews ? <ProductReviews /> : null}
+             {props.reviews ? <ProductReviews reviews={props.reviews} /> : null}
         </div>
     )
 }
